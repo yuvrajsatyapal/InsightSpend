@@ -18,7 +18,7 @@ const TransactionInfoCard = ({title, icon, date, amount, type, hideDeleteBtn, on
     typeof icon === 'string' && icon.startsWith('http') ? (
       <img src={icon} alt={title} className='w-6 h-6' />
     ) : (
-      <span className="text-xl">{icon}</span> // For emoji Or plain text
+      <span className="text-xl">{icon}</span>
     )
   ) : (
     <LuUtensils />
