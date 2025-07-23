@@ -3,16 +3,16 @@ import CustomPieChart from '../Charts/CustomPieChart'
 
 
 const COLORS = [
-  "#60A5FA",  // Blue
-  "#f43f5e",  // Rose Red
-  "#fbbf24",  // Amber Yellow
-  "#4f39f6",  // Deep Indigo
-  "#22c55e",  // Emerald Green
-  "#fb923c",  // Orange
-  "#6366f1",  // Indigo
-  "#ec4899",  // Pink
-  "#06b6d4",  // Cyan / Sky
-  "#8b5cf6",  // Violet
+  "#60A5FA",  
+  "#f43f5e",  
+  "#fbbf24",  
+  "#4f39f6",  
+  "#22c55e",  
+  "#fb923c",  
+  "#6366f1",  
+  "#ec4899",  
+  "#06b6d4",  
+  "#8b5cf6",  
 ];
 
 const RecentIncomeWithChart = ({data, totalIncome}) => {
