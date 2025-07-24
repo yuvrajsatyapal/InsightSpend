@@ -1,6 +1,6 @@
 export const BASE_URL = "https://insightspend.onrender.com";
 
-// utils/apiPaths.js
+
 export const API_PATHS = {
     AUTH: {
         LOGIN: "api/v1/auth/login",
