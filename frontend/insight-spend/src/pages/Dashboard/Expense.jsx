@@ -24,7 +24,6 @@ const Expense = () => {
   
     const [openAddExpenseModal, setOpenAddExpenseModal] = useState(false);
 
-     // Get All Expense Details
   const fetchExpenseDetails = async () => {
     if(loading) return;
 
@@ -44,11 +43,11 @@ const Expense = () => {
     }
   }
 
-  // Handle Add Expense
+
   const handleAddExpense = async (expense) => {
     const { category, amount, icon, date } = expense; 
 
-    // Validation Checks
+ 
     if(!category.trim()) {
       toast.error('Category is required');
       return;
@@ -81,7 +80,7 @@ const Expense = () => {
   };
   
 
-    // Expense Income
+    
   const deleteExpense = async (id) => {
     try {
       await axiosInstance.delete(API_PATHS.EXPENSE.DELETE_EXPENSE(id));
@@ -96,7 +95,7 @@ const Expense = () => {
     }
   }
 
-  // handle download expense details
+ 
   const handleDownloadExpenseDetails = async () => {
     try {
       const response = await axiosInstance.get(API_PATHS.EXPENSE.DOWNLOAD_EXPENSE, {
