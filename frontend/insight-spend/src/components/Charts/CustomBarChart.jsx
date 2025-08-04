@@ -13,7 +13,7 @@ import {
 
 const CustomBarChart = ({data}) => {
 
-    // Function to alternative colors
+ 
     const getBarColor = (index) => {
         return index % 2 === 0 ? "#60A5FA" : "#cfe4fb";
     };
