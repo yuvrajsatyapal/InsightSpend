@@ -4,14 +4,13 @@ const moment = require("moment");
 const fs = require('fs');
 
 
-// Add Income Source
+
 exports.addIncome = async (req, res) => {
     const UserId = req.user.id;
 
     try {
         const { icon, source, amount, date } = req.body;
 
-        // Validation: Check for missing fields
         if (!source || !amount || !date) {
             return res.status(400).json({ message: 'All fields are required' });
         }
@@ -30,7 +29,7 @@ exports.addIncome = async (req, res) => {
         res.status(500).json({ message: "Server Error" });
     }
 }
-// Get all Income Source
+
 exports.getAllIncome = async (req, res) => {
     const userId = req.user.id;
 
@@ -41,7 +40,7 @@ exports.getAllIncome = async (req, res) => {
         res.status(500).json({ message: "Server Error" });
     }
 }
-// Delete Income Source
+
 exports.deleteIncome = async (req, res) => {
     try {
         await Income.findByIdAndDelete(req.params.id);
@@ -50,14 +49,14 @@ exports.deleteIncome = async (req, res) => {
         res.status(500).json({ message: "Server Error" });
     }
 }
-// Download Excel
+
 exports.downloadIncomeExcel = async (req, res) => {
     const userId = req.user.id;
 
     try {
         const income = await Income.find({ userId }).sort({ date: -1 });
         
-        // Prepare for excel
+        
         const data = income.map((item) => ({
             Source: item.source,
             Amount: item.amount,
@@ -93,12 +92,12 @@ exports.downloadIncomeExcel = async (req, res) => {
         const filePath = "income_details.xlsx";
         xlsx.writeFile(wb, filePath);
 
-        // Wait for file system to write the file before downloading
+        
         setTimeout(() => {
             res.download(filePath, () => {
-                fs.unlinkSync(filePath); // Optional: delete after sending
+                fs.unlinkSync(filePath); 
             });
-        }, 100); // slight delay to ensure file is written
+        }, 100); 
 
     } catch (error) {
         console.error("Download error:", error);
