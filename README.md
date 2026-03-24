@@ -5,7 +5,7 @@
     and export records for offline analysis.
     Designed for clarity and control, InsightSpend offers an engaging, intuitive experience across all devices.
 
-## Link - https://insightspend-frontend.onrender.com
+## Link - https://insightspend-frontend.onrender.com/login
 
 
 ## ✨ Features
